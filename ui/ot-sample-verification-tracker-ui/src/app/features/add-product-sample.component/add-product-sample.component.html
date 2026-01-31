@@ -1,0 +1,77 @@
+<form (submit)="handleSubmit();$event.preventDefault()">
+  <div class="mb-3">
+    <label for="product-name" class="form-label">Product name</label>
+    <input [formField]="productSampleForm.productName" class="form-control"
+           [class.is-invalid]="productSampleForm.productName().invalid() && productSampleForm.productName().touched()"
+           placeholder="Product name"/>
+    @if (productSampleForm.productName().touched() && productSampleForm.productName().invalid()) {
+      <div class="invalid-feedback">
+        <ul>
+          @for (error of productSampleForm.productName().errors(); track error) {
+            <li>
+              {{ error.message }}
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+  <div class="mb-3">
+    <label for="product-origin" class="form-label">Origin</label>
+    <input [formField]="productSampleForm.origin" class="form-control" placeholder="Origin"/>
+    @if (productSampleForm.origin().touched() && productSampleForm.origin().invalid()) {
+      <div class="invalid-feedback">
+        <ul>
+          @for (error of productSampleForm.origin().errors(); track error) {
+            <li>
+              {{ error.message }}
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+  <div class="mb-3">
+    <label for="verification-status" class="form-label">Verification Status</label>
+    <app-enum-radio-group
+      class="form-control"
+      groupName="verification"
+      [options]="statusOptions"
+      [formField]="productSampleForm.verificationStatus"></app-enum-radio-group>
+  </div>
+  <div class="mb-3">
+    <label for="submitted-on" class="form-label">Submitted On</label>
+    <div class="input-group">
+      <input
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        name="submittedOn"
+        ngbDatepicker
+        #d="ngbDatepicker"
+        [formField]="productSampleForm.submittedOn"
+      />
+      <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+        📅
+      </button>
+      @if (productSampleForm.submittedOn().touched() && productSampleForm.submittedOn().invalid()) {
+        <div class="invalid-feedback d-block" >
+          <ul>
+            @for (error of productSampleForm.submittedOn().errors(); track error) {
+              <li>
+                {{ error.message }}
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="notes" class="form-label">Notes</label>
+    <div class="input-group">
+      <textarea [formField]="productSampleForm.notes" class="form-control" placeholder="Notes"></textarea>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="productSampleForm().invalid() || productSampleForm().submitting()">Submit</button>
+</form>

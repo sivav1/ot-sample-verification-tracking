@@ -1,0 +1,18 @@
+<div class="d-flex flex-column gap-2">
+  @for (opt of options(); track opt.value) {
+    <div class="form-check">
+      <input
+        type="radio"
+        class="form-check-input"
+        [name]="groupName()"
+        [id]="groupName() + '-' + opt.value"
+        [checked]="value() === opt.value"
+        (change)="onSelectionChange(opt.value)"
+        (blur)="touched.set(true)" />
+
+      <label class="form-check-label" [for]="groupName() + '-' + opt.value">
+        {{ opt.label }}
+      </label>
+    </div>
+  }
+</div>

@@ -1,0 +1,28 @@
+
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col" >Product name</th>
+    <th scope="col">Origin</th>
+    <th scope="col">Submitted on</th>
+    <th>Verification status</th>
+    <th>Notes</th>
+  </tr>
+  </thead>
+  @if (productSampleService.samples$ | async; as samples){
+  <tbody>
+    @for (sample of samples; track sample.productId) {
+      <tr>
+        <th scope="row">{{ sample.productId }}</th>
+        <td>{{ sample.productName }}</td>
+        <td>{{ sample.origin }}</td>
+        <td>{{sample.submittedOn| date:'MMM d, y'}}</td>
+        <td>{{sample.verificationStatus | enumValuePipe: VerificationStatusEnum}}</td>
+        <td>{{sample.notes}}</td>
+      </tr>
+    }
+  </tbody>
+  }
+</table>

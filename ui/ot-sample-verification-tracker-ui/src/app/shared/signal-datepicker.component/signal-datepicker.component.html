@@ -1,0 +1,12 @@
+<div class="input-group">
+  <input
+    class="form-control"
+    placeholder="yyyy-mm-dd"
+    name="dp"
+    ngbDatepicker
+    #d="ngbDatepicker"
+    [(ngModel)]="value"
+    (blur)="touched.set(true)"
+  />
+  <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">📅</button>
+</div>
