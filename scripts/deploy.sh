@@ -7,9 +7,9 @@ APP_NAME="ot-sample-verification-api"
 RESOURCE_GROUP="otResourceGroup"
 LOCATION="newzealandnorth"
 PLAN_NAME="otAppServicePlan"
-PROJECT_FILE="$PROJECT_ROOT/api/Ot.PSampleVerificationTracker.Api/Ot.SampleVerificationTracker.Api.csproj"
-PUBLISH_DIR="$PROJECT_ROOT/publish"
-ZIP_FILE="$PROJECT_ROOT/deploy.zip"
+PROJECT_FILE="$PROJECT_ROOT/api/Ot.SampleVerificationTracker.Api/Ot.SampleVerificationTracker.Api/Ot.SampleVerificationTracker.Api.csproj"
+PUBLISH_DIR="$PROJECT_ROOT/api/publish"
+ZIP_FILE="$PROJECT_ROOT/api/deploy.zip"
 
 echo "Using project root: $PROJECT_ROOT"
 

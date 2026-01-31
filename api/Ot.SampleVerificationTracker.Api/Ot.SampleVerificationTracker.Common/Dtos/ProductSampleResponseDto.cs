@@ -1,11 +1,12 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using Ot.SampleVerificationTracker.Common.Enums;
 
 namespace Ot.SampleVerificationTracker.Common.Dtos;
 
-public class CreateProductSampleDto
+public class ProductSampleResponseDto
 {
-    [Required]
+    public Guid ProductId { get; set; }
     public string ProductName { get; set; }
     public string Origin { get; set; }
     [Required, EnumDataType(typeof(Enums.VerificationStatus))]

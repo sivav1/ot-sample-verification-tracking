@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ot.SampleVerification.Api", "Ot.SampleVerification.Api\Ot.SampleVerification.Api.csproj", "{A2993670-F003-4FF7-8179-A7556B7B4AB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ot.SampleVerificationTracker.Api", "Ot.SampleVerificationTracker.Api\Ot.SampleVerificationTracker.Api.csproj", "{A2993670-F003-4FF7-8179-A7556B7B4AB9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ot.SampleVerificationTracker.Common", "Ot.SampleVerificationTracker.Common\Ot.SampleVerificationTracker.Common.csproj", "{EE22FC7F-1D26-4F48-B08B-BAFD1EAEF8A2}"
 EndProject
