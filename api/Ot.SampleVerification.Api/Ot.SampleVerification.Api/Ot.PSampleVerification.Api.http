@@ -1,0 +1,6 @@
+@Ot.PSampleVerification.Api_HostAddress = http://localhost:5244
+
+GET {{Ot.PSampleVerification.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
