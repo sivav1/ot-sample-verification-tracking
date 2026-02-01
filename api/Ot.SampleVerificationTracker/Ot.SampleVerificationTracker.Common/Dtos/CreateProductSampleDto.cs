@@ -6,8 +6,9 @@ namespace Ot.SampleVerificationTracker.Common.Dtos;
 
 public class CreateProductSampleDto
 {
-    [Required]
+    [Required(ErrorMessage = "Product name is required")]
     public string ProductName { get; set; }
+    [Required(ErrorMessage = "Product origin is required")]
     public string Origin { get; set; }
     [Required, EnumDataType(typeof(Enums.VerificationStatus))]
     public VerificationStatus VerificationStatus { get; set; }

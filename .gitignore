@@ -4,3 +4,5 @@
 **/debug
 **/bin
 **/publish
+**/dist
+**/.angular

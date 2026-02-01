@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Ot.SampleVerificationTracker.Common.Dtos;
 using Ot.SampleVerificationTracker.Common.Services;
 
-namespace Ot.SampleVerificationTracker.Api;
+namespace Ot.PSampleVerificationTracker.Api;
 
 [ApiController]
 [Route("api/[controller]")]

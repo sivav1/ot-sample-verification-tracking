@@ -1,4 +1,4 @@
-import {APP_INITIALIZER, inject, NgModule, Optional, provideAppInitializer, SkipSelf} from '@angular/core';
+import {inject, NgModule, Optional, provideAppInitializer, SkipSelf} from '@angular/core';
 
 @NgModule({
   imports:[],

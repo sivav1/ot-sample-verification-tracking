@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ot-product-verification-tracking-ui": {
+    "ot-sample-verification-tracker-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -20,9 +20,10 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                "glob": "appsettings.json",
-                "input": "./",
-                "output": "./"
+                "glob": "**/*",
+                "input": "src/assets",
+                "ignore": ["**/appsettings.prod.json"],
+                "output": "/assets"
               }
             ],
             "styles": [
@@ -47,6 +48,12 @@
                   "maximumError": "8kB"
                 }
               ],
+              "fileReplacements": [
+                {
+                  "replace": "src/assets/appsettings.json",
+                  "with": "src/assets/appsettings.prod.json"
+                }
+              ],
               "outputHashing": "all"
             },
             "development": {
@@ -61,10 +68,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ot-product-verification-tracking-ui:build:production"
+              "buildTarget": "ot-sample-verification-tracker-ui:build:production"
             },
             "development": {
-              "buildTarget": "ot-product-verification-tracking-ui:build:development"
+              "buildTarget": "ot-sample-verification-tracker-ui:build:development"
             }
           },
           "defaultConfiguration": "development"

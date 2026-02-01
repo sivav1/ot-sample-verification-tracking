@@ -17,7 +17,7 @@ export class ConfigService {
   async loadConfig(): Promise<void> {
 
     try {
-      const request$ = this.http.get<AppConfig>('appsettings.json').pipe(
+      const request$ = this.http.get<AppConfig>('assets/appsettings.json').pipe(
         tap(data => console.log('Config loaded from file:', data))
       );
 

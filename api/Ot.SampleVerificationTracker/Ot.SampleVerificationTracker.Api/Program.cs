@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Ot.PSampleVerificationTracker.Api;
 using Ot.SampleVerificationTracker.Common;
 using Ot.SampleVerificationTracker.Common.Middleware;
 using Ot.SampleVerificationTracker.Common.Repositories;
@@ -19,6 +20,8 @@ builder.Services.AddAutoMapper(cfg =>
 builder.Services.AddScoped<IProductVerificationService, ProductVerificationService>();
 builder.Services.AddScoped<IProductSampleRepository, ProductSampleRepository>();
 builder.Services.AddControllers();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 builder.Services.AddOpenApi();
 builder.Services.AddCors(options =>
 {
@@ -36,5 +39,11 @@ app.MapOpenApi();
 app.MapControllers();
 app.UseCors("AllowAllOrigins");
 app.UseMiddleware<CorrelationIdMiddleware>();
+app.UseStatusCodePages();
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/openapi/v1.json", "OT Sample API");
+});
+app.UseExceptionHandler();
 
 app.Run();

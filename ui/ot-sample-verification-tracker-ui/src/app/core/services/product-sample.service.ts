@@ -14,7 +14,7 @@ export class ProductSampleService {
   constructor(private http: HttpClient) { }
 
   samples$ = this.refreshSubject.pipe(
-    switchMap(() => this.http.get<ProductSampleModel[]>('ProductVerification')),
+    switchMap(() => this.http.get<ProductSampleModel[]>('SampleVerification')),
     shareReplay(1)
   );
 
@@ -28,6 +28,6 @@ export class ProductSampleService {
       submittedOn: sample.submittedOn?.toISOString(),
     }
     console.log(JSON.stringify(payload));
-    return this.http.post<boolean>('ProductVerification', payload);
+    return this.http.post<boolean>('SampleVerification', payload);
   }
 }
