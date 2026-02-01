@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ot.SampleVerificationTracke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ot.SampleVerificationTracker.Common", "Ot.SampleVerificationTracker.Common\Ot.SampleVerificationTracker.Common.csproj", "{EE22FC7F-1D26-4F48-B08B-BAFD1EAEF8A2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C75AEB19-1C71-4A2A-8DF1-42B37B9CE835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ot.SampleVerificationTracker.UnitTests", "Tests\Ot.SampleVerificationTracker.UnitTests\Ot.SampleVerificationTracker.UnitTests.csproj", "{432DEF6B-970B-4938-8FE1-BD23C9F60F7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{EE22FC7F-1D26-4F48-B08B-BAFD1EAEF8A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE22FC7F-1D26-4F48-B08B-BAFD1EAEF8A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE22FC7F-1D26-4F48-B08B-BAFD1EAEF8A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{432DEF6B-970B-4938-8FE1-BD23C9F60F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{432DEF6B-970B-4938-8FE1-BD23C9F60F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{432DEF6B-970B-4938-8FE1-BD23C9F60F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{432DEF6B-970B-4938-8FE1-BD23C9F60F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{432DEF6B-970B-4938-8FE1-BD23C9F60F7F} = {C75AEB19-1C71-4A2A-8DF1-42B37B9CE835}
 	EndGlobalSection
 EndGlobal

@@ -4,7 +4,7 @@ using Ot.SampleVerificationTracker.Common.Models;
 
 namespace Ot.SampleVerificationTracker.Common.Repositories;
 
-public interface IProductSampleRepository
+public interface ISampleVerificationEntryRepository
 {
     Task<bool> Create(IList<ProductSample> productSamples);
     Task<IList<ProductSample>> GetAll();

@@ -7,14 +7,14 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root',
 })
 export class ProductSampleService {
-
+  private endpoint = 'SampleVerificationEntry'
   private refreshSubject = new BehaviorSubject<void>(undefined);
 
-  //samples$ = this.samplesSubject.asObservable();
+  
   constructor(private http: HttpClient) { }
 
   samples$ = this.refreshSubject.pipe(
-    switchMap(() => this.http.get<ProductSampleModel[]>('SampleVerification')),
+    switchMap(() => this.http.get<ProductSampleModel[]>(this.endpoint)),
     shareReplay(1)
   );
 
@@ -28,6 +28,6 @@ export class ProductSampleService {
       submittedOn: sample.submittedOn?.toISOString(),
     }
     console.log(JSON.stringify(payload));
-    return this.http.post<boolean>('SampleVerification', payload);
+    return this.http.post<boolean>(this.endpoint, payload);
   }
 }
