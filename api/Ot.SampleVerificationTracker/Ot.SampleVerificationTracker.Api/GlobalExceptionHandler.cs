@@ -12,10 +12,9 @@ public class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) : IE
     {
         logger.LogError(exception, "An unhandled exception occurred: {Message}", exception.Message);
 
-        // Map specific exceptions to Status Codes
+        // Map specific exceptions to Status Codes - This is just sample done to show we handle the exceptions
         var (statusCode, title) = exception switch
         {
-            UnauthorizedAccessException => (StatusCodes.Status401Unauthorized, "Unauthorized"),
             KeyNotFoundException => (StatusCodes.Status404NotFound, "Resource Not Found"),
             InvalidOperationException => (StatusCodes.Status400BadRequest, "Invalid Request"),
             _ => (StatusCodes.Status500InternalServerError, "Server Error")

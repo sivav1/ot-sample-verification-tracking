@@ -9,7 +9,6 @@ import {HttpClient} from '@angular/common/http';
 export class ProductSampleService {
   private endpoint = 'SampleVerificationEntry'
   private refreshSubject = new BehaviorSubject<void>(undefined);
-
   
   constructor(private http: HttpClient) { }
 
@@ -25,9 +24,8 @@ export class ProductSampleService {
   save(sample: ProductSampleModel) {
     const payload = {
       ...sample,
-      submittedOn: sample.submittedOn?.toISOString(),
+      submittedOn: sample.submittedOn?.toISOString(), // This is to ensure compatibility with .net api service date format
     }
-    console.log(JSON.stringify(payload));
     return this.http.post<boolean>(this.endpoint, payload);
   }
 }
